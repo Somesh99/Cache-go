@@ -82,9 +82,28 @@ func (R *LRUCache) removeTail() *Node {
 }
 
 func main(){
-
-   f1 := Constructor(1);
-   //f1.Get(1);
-   f1.Put(1,3)
-   fmt.Println(f1.Get(1))
-} 
+   //var c int
+   var k int
+   var v int
+   var ke int
+   //fmt.Println("Enter Capacity :")
+   //fmt.Scanf("%d",&c)
+   f1 := Constructor(2);
+   var i int
+   L1: fmt.Println("ENTER 1 for PUT \n2 for GET ")
+   fmt.Scanln(&i)
+   switch i {
+     case 1 :
+     fmt.Printf("\nEnter %d Key and %d Value  :",i,i)
+     fmt.Scanln(&k)
+     fmt.Scanln(&v)
+     f1.Put(k,v)
+     //f1.Get(k)
+     goto L1
+     case 2 :
+     fmt.Println("\nEnter key to find value :")
+     fmt.Scanf("%d",&ke)
+     fmt.Println(f1.Get(ke))
+     default:
+     fmt.Println("ERROR")
+}
